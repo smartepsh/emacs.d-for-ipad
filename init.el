@@ -18,6 +18,7 @@
 (require 'init-magit)
 (require 'init-chinese)
 (require 'init-ivy)
+(require 'init-nav)
 (require 'init-projectile)
 
 (toggle-frame-fullscreen)
