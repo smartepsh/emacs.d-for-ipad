@@ -24,7 +24,7 @@
 	     (add-hook 'after-init-hook #'which-key-mode))
 
 (use-package evil
-	     :init 
+	     :init
 	     (setq evil-shift-width 2
 		   evil-flash-delay 1
 		   evil-want-integration nil)
@@ -43,7 +43,7 @@
 	     (defun paste-from-clipboard ()
 	       (interactive)
 	       (evil-paste-after 1 (evil-use-register ?+)))
-	     
+
 	     (setq-default evil-shift-width 2)
 
 	     (general-define-key
@@ -63,4 +63,47 @@
 		      split-window-below-and-focus
 		      split-window-right
 		      split-window-rigth-and-focus)))
+
+(use-package evil-matchit
+  :hook (prog-mode . evil-matchit-mode))
+
+(use-package evil-surround
+  :after evil
+  :config (global-evil-surround-mode t)
+  :general
+  (general-define-key
+   :states 'motion
+   "s" 'evil-surround-region))
+
+(use-package evil-embrace
+  :after evil-surround
+  :config
+  (evil-embrace-enable-evil-surround-integration))
+
+(use-package free-keys
+  :commands free-keys)
+
+(use-package evil-nerd-commenter
+  :commands (evilnc-comment-or-uncomment-lines)
+  :config
+  (evilnc-default-hotkeys)
+  :general
+  (common-leader
+    "gc" 'evilnc-comment-or-uncomment-lines))
+
+(use-package evil-visualstar
+  :after evil
+  :init
+  (global-evil-visualstar-mode)
+  :config
+  (setq evil-visualstar/persistent t))
+
+(use-package undo-tree
+  :init
+  (setq undo-tree-history-directory-alist `(("." . ,"~/.emacs.d/undo-tree-history")))
+  (setq undo-tree-auto-save-history t
+        undo-tree-visualizer-timestamps t
+        undo-tree-enable-undo-in-region nil)
+  (global-undo-tree-mode))
+
 (provide 'init-evil)

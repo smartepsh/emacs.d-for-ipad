@@ -17,5 +17,9 @@
 (require 'init-ui)
 (require 'init-magit)
 (require 'init-chinese)
+(require 'init-ivy)
 
 (toggle-frame-fullscreen)
+
+(add-hook 'window-setup-hook '(lambda ()
+                                (message (format "Emacs startup in %.3f seconds" (float-time (time-subtract (current-time) emacs-start-time))))))
