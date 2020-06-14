@@ -16,5 +16,6 @@
 (require 'init-basic-settings)
 (require 'init-ui)
 (require 'init-magit)
+(require 'init-chinese)
 
 (toggle-frame-fullscreen)
