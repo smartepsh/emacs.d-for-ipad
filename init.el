@@ -16,10 +16,15 @@
 (require 'init-basic-settings)
 (require 'init-ui)
 (require 'init-magit)
-(require 'init-chinese)
 (require 'init-ivy)
 (require 'init-nav)
 (require 'init-projectile)
+(require 'init-chinese)
+
+;; TODO
+;; company
+;; org
+;; sync functions
 
 (toggle-frame-fullscreen)
 
