@@ -22,9 +22,9 @@
 (require 'init-chinese)
 (require 'init-company)
 ;; (require 'init-spell)
+(require 'init-org)
 
 ;; TODO
-;; org
 ;; sync functions
 
 (toggle-frame-fullscreen)
