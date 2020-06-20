@@ -20,9 +20,9 @@
 (require 'init-nav)
 (require 'init-projectile)
 (require 'init-chinese)
+(require 'init-company)
 
 ;; TODO
-;; company
 ;; org
 ;; sync functions
 
