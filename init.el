@@ -21,6 +21,7 @@
 (require 'init-projectile)
 (require 'init-chinese)
 (require 'init-company)
+;; (require 'init-spell)
 
 ;; TODO
 ;; org
