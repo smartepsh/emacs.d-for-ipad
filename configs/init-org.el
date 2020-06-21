@@ -1,8 +1,16 @@
-(setq org-directory "~/notes")
+(setq org-directory "~/notes/")
 
 (defun open-orgs()
   (interactive)
   (dired org-directory))
+
+(defun fetch-notes()
+  (interactive)
+  (shell-command (concat org-directory "fetch-notes.sh")))
+
+(defun upload-notes()
+  (interactive)
+  (shell-command (concat org-directory "upload-notes.sh")))
 
 (use-package org
   :ensure org-plus-contrib
@@ -10,11 +18,15 @@
   :config
   (setq org-todo-keywords '((sequence "TODO(t)" "VERIFY(v)" "DONE(d)" "DELEGATED(g)" "CANCELED(c)"))
         org-default-notes-file (concat org-directory "defalut.org")
-        ;; org-archive-location (concat org-directory "Archived/" "%s_archive::")
+        org-archive-location (concat org-directory "Archived/" "%s_archive::")
         org-log-done 'time)
   (nconc org-modules '(org-id org-protocol))
   :general
   (common-leader "oo" 'open-orgs)
+  (common-leader
+    :keymaps 'org-mode-map
+    "of" 'fetch-notes
+    "op" 'upload-notes)
   (local-leader
     :keymaps 'org-mode-map
     "A" 'org-attach

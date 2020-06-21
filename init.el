@@ -24,9 +24,6 @@
 ;; (require 'init-spell)
 (require 'init-org)
 
-;; TODO
-;; sync functions
-
 (toggle-frame-fullscreen)
 
 (add-hook 'window-setup-hook '(lambda ()
