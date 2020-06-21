@@ -23,6 +23,9 @@
         truncate-lines nil)
   (nconc org-modules '(org-id org-protocol))
   :general
+  (general-define-key
+   :keymaps 'org-mode-map
+   "C-d" 'delete-char)
   (common-leader "oo" 'open-orgs)
   (common-leader
     :keymaps 'org-mode-map
