@@ -20,6 +20,11 @@
   (global-set-key (kbd "M-f") 'pyim-forward-word)
   (global-set-key (kbd "M-b") 'pyim-backward-word)
   (global-set-key (kbd "C-`") 'pyim-punctuation-toggle)
+  (setq-default pyim-english-input-switch-functions
+                '(pyim-probe-isearch-mode
+                  pyim-probe-org-structure-template)
+                pyim-punctuation-half-width-functions
+                '(pyim-probe-punctuation-after-punctuation))
   :general
   (general-define-key
   :keymaps '(pyim-mode-map)
