@@ -23,6 +23,7 @@
 (require 'init-company)
 ;; (require 'init-spell)
 (require 'init-org)
+(require 'init-program)
 
 (toggle-frame-fullscreen)
 
