@@ -3,11 +3,9 @@
   :init
   (add-hook 'after-init-hook #'cnfonts-enable))
 
-(setq private/rime-directory (concat private/config-directory "rime/"))
-
 (use-package liberime
   :init
-  (add-hook 'after-init-hook #'liberime-sync-user-data))
+  (add-hook 'after-init-hook #'liberime-sync))
 
 (use-package pyim
   ;; :after liberime
