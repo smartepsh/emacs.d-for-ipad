@@ -88,8 +88,9 @@
   :config
   (add-hook 'org-mode-hook 'evil-org-mode)
   (add-hook 'evil-org-mode-hook (lambda ()
-                                  (evil-org-set-key-theme))))
-  ;; (evil-org-agenda-set-keys))
+                                  (evil-org-set-key-theme)))
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
 
 (use-package toc-org
   :commands (toc-org-markdown-follow-thing-at-point)
