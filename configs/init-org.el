@@ -19,7 +19,8 @@
   (setq org-todo-keywords '((sequence "TODO(t)" "VERIFY(v)" "DONE(d)" "DELEGATED(g)" "CANCELED(c)"))
         org-default-notes-file (concat org-directory "defalut.org")
         org-archive-location (concat org-directory "Archived/" "%s_archive::")
-        org-log-done 'time)
+        org-log-done 'time
+        truncate-lines nil)
   (nconc org-modules '(org-id org-protocol))
   :general
   (common-leader "oo" 'open-orgs)
